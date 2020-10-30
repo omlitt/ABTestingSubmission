@@ -1,0 +1,78 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<title>A/B Testing</title>
+	<link rel="stylesheet" href="index.css">
+	<!-- TODO: add additional links here! e.g. fonts, icons, more stylesheets, etc. -->
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+</head>
+
+<body>
+	<main>
+		<h1>A/B Testing</h1>
+		<div id="nav"><h4>Page Map</h4>
+			<ul>
+				<li><a href="#sv">Site Versions</a></li>
+				<ul>
+					<li><a href="#a">Version A</a></li>
+					<li><a href="#b">Version B</a></li>
+				</ul>
+				<li><a href="#se">Statistical Experiment</a></li>
+				<ul>
+					<li><a href="#dc">Data Collection</a></li>
+					<li><a href="#cl">Cleaning the Logs</a></li>
+					<li><a href="#h">Hypotheses</a></li>
+					<li><a href="#f">Findings</a></li>
+				</ul>
+				<li><a href="#take">Takeaways</a></li>
+			</ul>
+		</div>
+		<p>
+			The goal of this project was to evaluate two different UI designs via statistical analysis. I made two versions of a webpage and conducted an A/B test to determine how the designs impacted user behavior.
+		</p>
+		<h2 id='sv'>Site versions</h2>
+		<h3 id='a'>Version A:</h3>
+		<p>This version of the website has borders around each item that guide the eye across the width of the screen, rather than down the page.</p>
+		<img class="banner" src="versionA.png">
+		<h3 id='b'>Version B:</h3>
+		<p>This version has larger images and no borders, which means the images will better draw the eye, but less will fit on the page at once. The title of the store is also changed to "The Cactus Shop."</p>
+		<img class="banner" src="versionB.png">
+		<h2 id="se">Statistical Experiment</h2>
+		<h3 id='dc'>Data Collection</h3>
+		<p>
+			Both versions of the website were deployed at the same url, which has an equal chance of serving new users either version A or B of the page.
+		</p>
+		<p>Testers were asked to add $150 worth of cacti to their cart. The amount of time they spent on the page, the items they clicked on, and whether the user navigated to the cart were all recorded. </p>
+		<p>The tests being conducted were specifically looking into how the interface impacted two metrics:</p>
+		<ul>
+			<li>The amount of time to complete the task</li>
+			<li>Whether the user returned to the main page after navigated to the cart.</li>
+		</ul>
+		<h3 id='cl'>Cleaning the Logs</h3>
+		<p>After the data was collected, I needed to process it in order to remove any outliers or other invalid data that would skew the results. Examples of logs that needed to be removed are from users who did not put anything in their cart or took hours to finish the task.</p>
+		<p>Once the data were cleaned, it was ready to be processed for the statistical tests.</p>
+		<h3 id="h">Hypotheses</h3>
+		Before running the test, I needed to formally state my hypotheses about how the UI changes impacted the user's behavior.
+		<h4>Time to Completion</h4>
+		I believe that larger images and removal of distracting borders will entice users to buy cacti more quickly.
+		<p><strong>Null Hypothesis:</strong> The size of images and presence of borders does not impact the time a user spends on the webpage before choosing what to buy.</p>
+		<p><strong>Alternative Hypothesis:</strong> Larger images and a lack of borders will decrease the amount of time the user deliberates before buying.</p>
+		<h4>Return Rate</h4>
+		I believe that version B will lead to more users returning to the website.
+		<p><strong>Null Hypothesis:</strong> The size of images and presence of borders does not impact whether a user will return to the website.</p>
+		<p><strong>Alternative Hypothesis:</strong> Larger images and a lack of borders will make users more likely to return.</p>
+		<h3 id='f'>Findings</h3>
+		Note that there were only nine users for version A and three for version B.
+		<img src="ab infographic.png">
+		<p>Thus, for time to completion we reject the null hypothesis since we have statistically significant results that show the design for version B reduced the time for completion.</p>
+		<p>For return rate, we do not reject the null since the proportion of return was the same for both version A and B.</p>
+		<h2 id='take'>Takeaways</h2>
+		<ul>
+			<li>In order to verify the results, the experiment should be replicated with a much larger number of users. Having less than ten users per version was not ideal, and potentially skewed the results.</li>
+			<li>The users were all CS1300 students, not real cactus shoppers. Limiting the testing pool to people who would legitimately use the product would also make the results more acurrate.</li>
+			<li>We learned that a minimalist design with larger, more eyecatching images can help convince users to buy items more quickly.</li>
+			<li>Perhaps there is an optimal image size for the average user. More testing may yield the answer to this question. </li>
+		</ul>
+	</main>
+</body>
